@@ -21,4 +21,5 @@ argecho.py
 kant.xml
 ```
 `sys.argv[0]`: python script文件名
+
 `sys.argv[1:]`: 命令行中python脚本名称后的其他参数列表
