@@ -16,7 +16,7 @@
 >>> status.keys()
 [u'status', u'running', u'finished', u'pending', u'node_name']
 >>> type(status['running'])
-# 这个dict有五个keys，每个对应的值都是一个列表，列表的元素都是dict
+# 这个dict有五个keys，每个对应的值有字符串，也有列表，此处列表每个元素的格式分别也满足要求，都转成了dict
 <type 'list'>
 >>> len(status['running'])
 1
