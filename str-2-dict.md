@@ -1,4 +1,4 @@
-```python
+```
 >>> subprocess.check_output(["curl", "http://localhost:6800/listjobs.json?project=default"])
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
