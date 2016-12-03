@@ -9,14 +9,14 @@
 "pending": [], 
 "node_name": "iZ23zlxjhclZ"}\n'
 >>> import ast
-# The returned result of check_output is string, which is parsed into dict object
+# check_output的返回值是字符串string，满足转换成dict的格式要求。
 >>> status = ast.literal_eval(subprocess.check_output(["curl", "http://localhost:6800/listjobs.json?project=default"]))
 >>> type(status)
 <type 'dict'>
 >>> status.keys()
 [u'status', u'running', u'finished', u'pending', u'node_name']
 >>> type(status['running'])
-# Above keys have lists (of dicts) as their values
+# 这个dict有五个keys，每个对应的值都是一个列表，列表的元素都是dict
 <type 'list'>
 >>> len(status['running'])
 1
