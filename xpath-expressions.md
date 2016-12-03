@@ -1,5 +1,5 @@
 下面的示例为http://example.com/
-'''
+```
 $x('/html')
   [ <html>...</html> ]
 $x('/html/body')
@@ -29,7 +29,7 @@ $x('//a[starts-with(@href, "http://www.")]')
 $x('//a[not(contains(@href, "abc"))]')
   [ <a href="http://www.iana.org/domains/example">More information...</a>]
 ```
-以下是在scrapy中的应用，首先`scrapy shell http://example.com`
+以下是在scrapy中的应用，首先`scrapy shell http://example.com`，
 ```python
 response.xpath('/html').extract()
   [u'<html><head><title>...</body></html>']
@@ -47,3 +47,19 @@ response.xpath('//a/text()').extract()
   [u'More information...']
 response.xpath('//a[starts-with(@href, "http://www.")]').extract()
   [u'<a href="http://www.iana.org/domains/example">More information...</a>']
+```
+取得包含id 'firstHeading'的div之内span部分的text文本
+`//div[@id="firstHeading"]/span/text()`
+取得包含id 'toc'的div之内ul之下所包含的所有a标签内的url
+`//div[@id="toc"]/ul//a/@href`
+对于所有有class属性，并且属性中含有“ltr”和“skin-vector”的元素，取得其内所有h1头元素的文本
+`//*[contains(@class,"ltr") and contains(@class,"skin-vector")]//h1//text()`
+取得含有class属性，属性值为“infobox”的table元素内第一个图片的url
+`//table[@class="infobox"]//img[1]/@src`
+取得含有class属性，属性值以“reflist”开头的div元素内所有a元素属性内的url链接
+`//div[starts-with(@class,"reflist")]//a/@href`
+如果某元素的子元素文本内容含有“References”，取得在该元素随后元素的a标签内容（链接）
+注意，由于这个xpath表达式对html内容作出很多假设，所以容易失效。
+`//*[text()="References"]/../following-sibling::div//a`
+取得页面内所有图片的url
+`//img/@src`
