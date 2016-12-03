@@ -29,3 +29,9 @@ u'baidulaw'
 >>> status['running'][0]['id']
 u'cb595792b7ab11e683a400163e0cb504'
 ```
+可以从字符串转成dict最基础的格式要求：
+```python
+import ast
+ast.literal_eval("{'x':1, 'y':2}")
+=> {'y': 2, 'x': 1}
+```
