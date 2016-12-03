@@ -2,6 +2,8 @@
 - [执行外部命令][1]
 - [传递命令行参数][2]
 - [子字符串匹配][3]
+- [字符串->dict][4]
 [1]: execute-external-command.md
 [2]: cmd-line-args.md
 [3]: extract-substring.md
+[4]: str-2-dict.md
