@@ -1,10 +1,11 @@
 ```python
-#argecho.py
+# file name: argecho.py
 import sys
 
 for arg in sys.argv:
-    print arg
+    print(arg)
 ```
+
 ```
 $ python argecho.py
 argecho.py
@@ -20,6 +21,7 @@ argecho.py
 -m
 kant.xml
 ```
+
 `sys.argv[0]`: python script文件名
 
 `sys.argv[1:]`: 命令行中python脚本名称后的其他参数列表
